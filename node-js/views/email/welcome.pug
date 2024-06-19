@@ -1,0 +1,28 @@
+extends baseEmail
+
+block content
+  tr
+    td(style='padding:32px 32px 16px 32px;text-align:left')
+      h1(style='text-align:left;font-size:24px;font-weight:400;line-height:22px;margin:0;padding:0;font-family:open sans,helvetica neue,helvetica,arial,sans-serif')
+        | Hi #{firstName},
+  tr
+    td(style='text-align:left;padding:0px 32px 16px 32px')
+      p(style='font-size:14px;font-family:open sans,helvetica neue,helvetica,arial,sans-serif;line-height:20px')
+        | Welcome to the SITI tea Monitoring System! Your login credentials are:
+      ul(style='padding-top:8px;padding-bottom:16px;list-style:none;font-size:18px;line-height:24px;font-family:open sans,helvetica neue,helvetica,arial,sans-serif')
+        li
+          | Username: 
+          b #{options.email}
+        li
+          | Password: 
+          b #{options.password}
+      p(style='font-size:14px;font-family:open sans,helvetica neue,helvetica,arial,sans-serif;line-height:20px')
+        | Explore our user-friendly platform, offering real-time data visualization, customizable reports, and more. For assistance, reach out to our support team at 
+        a(href=`mailto:${options.supportEmail}` style='text-decoration:none;color:#2ecc71' target='_blank') #{options.supportEmail}
+      p(style='font-size:14px;font-family:open sans,helvetica neue,helvetica,arial,sans-serif;line-height:20px')
+        | Thank you for joining our team and contributing to our factory's success.
+  tr
+    td(style='text-align:center;padding:0px 32px 64px 32px;font-family:open sans,helvetica neue,helvetica,arial,sans-serif')
+      a(style='border:0 solid #fff;text-transform:uppercase;color:#fff;font-size:14px;padding:12px 18px 12px 18px;line-height:3;text-decoration:none;border-radius:3px;background-color:#2ecc71' href=`${url}` target='_blank' )
+        | Login
+        | to SITI tea

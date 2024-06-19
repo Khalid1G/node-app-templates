@@ -1,0 +1,25 @@
+services:
+  # MongoDB service
+  mongodb:
+    container_name: DB_container
+    image: mongo:latest
+    restart: always
+    ports:
+      - 2717:27017
+    volumes:
+      - mongodb:/data/db
+
+  # NodeJS API service
+  nodejs:
+    container_name: API_container
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      MONGODB_URI: "mongodb://mongodb:27017/my_db"
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb: {}

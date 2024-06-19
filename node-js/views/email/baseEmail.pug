@@ -1,0 +1,38 @@
+doctype html
+head
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+  title Simple Transactional Email
+  include _style
+div(style="background-color:#f0f2f5;margin:0;padding:0")
+  table(style="border-radius: 0.4rem;width:100%;font-family:open sans,helvetica neue,helvetica,arial,sans-serif;color:#222;font-size:16px;margin-bottom:32px;margin-top:8px")
+    tbody
+      tr
+        td(style="text-align:center")
+          table(style="background-color:white;width:100%;max-width:600px;margin:0 auto;padding:0;border-spacing:0")
+            tbody
+              tr
+                td
+                  .logo__container 
+                    img(alt="SITI tea logo" src=`${options.host}/assets/img/logo/Logo-SITI-Black.png` class="img__logo")
+
+              block content
+          table(style="width: 100%;max-width: 600px;margin: 15px auto;padding: 0;border-spacing: 1px;").footer
+            tbody
+              tr
+                td
+                  span
+                  | 00 212 5243-88500 LOT N 153, ROUTE DE SAFI
+                  | MARRAKECH 40000, MAROC
+
+              tr 
+                td 
+                  |
+              tr
+                td
+                  span
+                  | Copyright (c) 2023 IMPERIUM HOLDING All rights reserved.
+              tr
+                td
+                  | Powered by 
+                  a(style="text-decoration: none;" href='https://siti-tea.com/') SITI.
